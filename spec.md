@@ -19,7 +19,6 @@
    - 健康目标：减重/增重/维持健康
    - 饮食限制：过敏源、偏好（素食、无麸质等）
    - 活动水平：久坐/轻度/中度/高度活跃
-   - _存储方式：数据库_
 
 2. **饮食记录（AI图像识别）**
    - 拍照上传或选择图片
@@ -196,19 +195,7 @@ class Recommendation(BaseModel):
 9. 查看多套推荐方案，选择其中一套，或要求重新生成
 10. 按推荐记录下一餐
 
-## 七、MVP里程碑
-
-| 阶段    | 目标                       | 关键文件                             |
-| ------- | -------------------------- | ------------------------------------ |
-| Phase 1 | 项目初始化 + 前端框架搭建  | package.json, vite.config.ts         |
-| Phase 2 | 后端API框架搭建 + 基础路由 | main.py, routers/                    |
-| Phase 3 | 数据库模型 + 用户档案API   | models.py, database.py, schemas.py   |
-| Phase 4 | 图像上传 + AI识别接口      | routers/image.py, services/vision.py |
-| Phase 5 | 饮食记录界面 + 数据展示    | components/, pages/                  |
-| Phase 6 | AI推荐功能集成             | services/recommendation.py           |
-| Phase 7 | UI优化 + 测试 + 部署       | -                                    |
-
-## 八、技术决策确认（已完成）
+## 七、技术决策确认
 
 | 决策项       | 选择                                   |
 | ------------ | -------------------------------------- |
@@ -221,9 +208,9 @@ class Recommendation(BaseModel):
 | 图片存储     | 分析后即可丢弃                         |
 | 数据库       | SQLite（开发）/ PostgreSQL（生产）     |
 
-## 九、实施计划
+## 八、实施计划
 
-### 9.1 项目结构
+### 8.1 项目结构
 
 ```
 aqua/
@@ -250,34 +237,3 @@ aqua/
 ├── data/                     # SQLite数据库文件（开发环境）
 └── README.md
 ```
-
-### 9.2 关键文件说明
-
-- [backend/app/services/vision.py](backend/app/services/vision.py) - Gemini API集成，图像识别和营养分析
-- [backend/app/api/meals.py](backend/app/api/meals.py) - 饮食记录相关API
-- [backend/app/api/recommend.py](backend/app/api/recommend.py) - AI推荐API
-- [backend/app/models.py](backend/app/models.py) - 数据库模型（User, MealRecord）
-- [backend/app/database.py](backend/app/database.py) - 数据库连接和初始化
-- [frontend/src/pages/RecordMeal.tsx](frontend/src/pages/RecordMeal.tsx) - 拍照记录页面
-- [frontend/src/pages/Recommendation.tsx](frontend/src/pages/Recommendation.tsx) - 推荐结果页面
-
-### 9.3 开发步骤
-
-1. 初始化项目结构（前后端）
-2. 配置FastAPI + CORS
-3. 设计数据库模型并实现数据库连接
-4. 实现Gemini Vision API集成
-5. 搭建React前端基础框架
-6. 实现用户档案API和前端页面
-7. 实现饮食记录API和拍照界面
-8. 实现AI推荐接口和前端页面
-9. 联调测试
-
-### 9.4 验收标准
-
-- [ ] 用户可以填写个人档案并保存到数据库
-- [ ] 用户可以拍照上传食物图片
-- [ ] AI正确识别食物并估算营养成分
-- [ ] 用户可以确认/修正AI识别结果
-- [ ] AI基于饮食历史生成下一餐菜品推荐
-- [ ] 界面支持中文显示
