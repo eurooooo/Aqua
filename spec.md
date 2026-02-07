@@ -221,19 +221,14 @@ aqua/
 │   │   ├── services/        # API调用
 │   │   ├── types/           # TypeScript类型定义
 │   │   └── utils/           # 工具函数
-│   ├── package.json
-│   └── vite.config.ts
 ├── backend/                  # FastAPI后端
 │   ├── app/
 │   │   ├── api/             # API路由
+│   │   ├── core/            # 核心配置
+│   │   ├── models/          # 数据库模型
+│   │   ├── schemas/         # Pydantic模式
 │   │   ├── services/        # 业务逻辑
-│   │   │   ├── vision.py    # AI图像识别
-│   │   │   └── recommendation.py  # AI推荐
-│   │   ├── models.py        # 数据库模型
-│   │   ├── database.py      # 数据库连接
-│   │   └── schemas.py       # Pydantic模式
-│   ├── requirements.txt
-│   └── main.py
+│   │   └── main.py          # 应用入口
 ├── data/                     # SQLite数据库文件（开发环境）
 └── README.md
 ```

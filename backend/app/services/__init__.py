@@ -1,3 +1,3 @@
-from .nutrition import NutritionCalculator
+from . import user
 
-__all__ = ["NutritionCalculator"]
+__all__ = ["user"]
